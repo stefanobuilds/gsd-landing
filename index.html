@@ -892,6 +892,73 @@ footer .links a {
 
 footer .links a:hover { color: var(--cream); }
 
+/* ─── HERO IMAGE ─── */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 100%);
+  mask-image: linear-gradient(to left, black 50%, transparent 100%);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+@media (max-width: 768px) {
+  .hero-image { display: none; }
+}
+
+/* ─── INCLUDED IMAGE ─── */
+.included-img {
+  margin-top: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.included-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+}
+
+/* ─── PHOTO STRIP ─── */
+.photo-strip {
+  padding: clamp(4rem, 8vh, 6rem) 0;
+}
+
+.photo-strip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.photo-strip-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photo-strip-grid img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .photo-strip-grid { grid-template-columns: 1fr; }
+  .photo-strip-grid img { height: 240px; }
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -980,10 +1047,8 @@ footer .links a:hover { color: var(--cream); }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
+  <div class="hero-image">
+    <img src="getshitdone.jpeg" alt="GSD coworking session in action">
   </div>
   <div class="container">
     <p class="hero-eyebrow">Structured Coworking Sprints</p>
@@ -1151,6 +1216,9 @@ footer .links a:hover { color: var(--cream); }
         <p class="price-anchor">
           A regular coworking day pass costs ~$15. You get a desk but not community. <strong>With us, you get both.</strong>
         </p>
+        <div class="included-img">
+          <img src="getshitdone2.jpeg" alt="People working together at a GSD session">
+        </div>
       </div>
       <div class="included-list">
         <div class="included-item reveal">
@@ -1230,6 +1298,16 @@ footer .links a:hover { color: var(--cream); }
         <blockquote>"What I love most are the breaks — I can easily spend 5 hours sitting — and also the closure. This helps setting healthy boundaries with my work."</blockquote>
         <p class="author">— Laura</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<section class="photo-strip">
+  <div class="container">
+    <div class="photo-strip-grid reveal">
+      <img src="getshitdone3.jpeg" alt="GSD session atmosphere">
+      <img src="getshitdone4.jpeg" alt="People focused and working">
     </div>
   </div>
 </section>
